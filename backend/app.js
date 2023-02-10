@@ -13,7 +13,7 @@ router.use((req, res, next) => {
     printrequest.print(req, res, next)
 })
 
-router.get("/", (req, res, next) => {
+router.get("/", (req, res) => {
     res.send('Hello World!')
 })
 

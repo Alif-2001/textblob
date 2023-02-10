@@ -1,10 +1,10 @@
 const request = require('supertest');
 const app = require('../app');
 
-describe("GET /", () => {
-    it("should return Hello World", (done) => {
+describe("GET /api", () => {
+    it("should return Hello World!", (done) => {
         request(app)
-            .get("/")
+            .get("/api")
             .expect(200)
             .expect("Hello World!", done);
     })

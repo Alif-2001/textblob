@@ -2,6 +2,27 @@ name: build
 run-name: ${{ github.actor }}
 on: [push]
 jobs:
+
+  lint-backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm ci
+      - run: npm run lint
+
+  lint-frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend/my-app
+    steps:
+      - uses: actions/checkout@v3
+      - run: yarn
+      - run: yarn run lint
+
   build-backend:
     runs-on: ubuntu-latest
     defaults:

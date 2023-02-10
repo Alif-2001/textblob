@@ -6,10 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: cd backend
       - uses: actions/setup-node@v3
         with:
           node-version: "14"
+      - run: cd backend
       - run: npm install
 
   build-frontend:
@@ -21,13 +21,4 @@ jobs:
         with:
           node-version: "14"
       - run: npm build
-
-  test-frontend:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: cd frontend/my-app
-      - uses: actions/setup-node@v3
-        with:
-          node-version: "14"
       - run: npm test

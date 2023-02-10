@@ -4,17 +4,24 @@ on: [push]
 jobs:
   build-backend:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        # Backend
+        working-directory: backend
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "14"
-      - run: cd backend
+          node-version: 14
       - run: npm ci
       - run: npm test --if--present
 
   build-frontend:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        # Frontend
+        working-directory: frontend
     steps:
       - uses: actions/checkout@v3
       - run: cd frontend/my-app

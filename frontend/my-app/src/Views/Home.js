@@ -11,7 +11,7 @@ export default function Home() {
         SentimentAPI
             .getSentiment(input)
             .then(res => {
-                if(res.ok) {
+                if (res.ok) {
                     return res.json();
                 }
             })
@@ -20,22 +20,22 @@ export default function Home() {
             })
     }
 
-    return(
+    return (
         <div>
             <h1>Sentiment Analysis</h1>
             <label>
                 Your Text:
                 <br />
-                <input type="text" name="input" value={input} onChange={(e) => {setInput(e.target.value)}}/>
+                <textarea rows={4} cols={30} name="input" value={input} onChange={(e) => { setInput(e.target.value) }}></textarea>
             </label>
             <br />
-            <input type="submit" value="Submit" onClick={submitInput}/>
+            <input type="submit" value="Submit" onClick={submitInput} />
             <div>
                 {
                     JSON.stringify(sentimentData) === '{}' ?
-                    <div />
-                    :
-                    <SentimentViewer data={sentimentData} />
+                        <div />
+                        :
+                        <SentimentViewer data={sentimentData} />
                 }
             </div>
         </div>

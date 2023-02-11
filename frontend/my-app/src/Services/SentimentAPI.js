@@ -1,4 +1,4 @@
-import { SentimentAPIUrls } from '../Constants/APIFields';
+import { SentimentAPIUrls } from '../Constants/APIFields.js';
 
 async function getSentiment(input) {
     try {

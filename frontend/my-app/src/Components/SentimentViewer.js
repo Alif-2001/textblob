@@ -4,7 +4,6 @@ export default function SentimentViewer(props) {
     if (!props) {
         return (<div></div>)
     }
-    console.log(props);
     const generateList = (items) => {
         const rows = []
         items.forEach(element => {

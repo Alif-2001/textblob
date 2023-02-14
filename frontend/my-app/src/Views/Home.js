@@ -35,7 +35,9 @@ export default function Home() {
                     JSON.stringify(sentimentData) === '{}' ?
                         <div />
                         :
-                        <SentimentViewer data={sentimentData} />
+                        <div role="sentiment-viewer">
+                            <SentimentViewer data={sentimentData} />
+                        </div>
                 }
             </div>
         </div>

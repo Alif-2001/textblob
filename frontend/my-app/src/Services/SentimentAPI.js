@@ -17,8 +17,24 @@ async function getSentiment(input) {
     }
 }
 
+async function getHistory(count) {
+    try {
+        const response = await fetch(SentimentAPIUrls.History_API, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json",
+                "count": count,
+            }
+        });
+        return await response;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 const SentimentAPI = {
     getSentiment,
+    getHistory
 }
 
 export default SentimentAPI;

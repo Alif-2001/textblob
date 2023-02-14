@@ -24,25 +24,31 @@ export default function SentimentViewer(props) {
             <div role="comparative">
                 {props.data.comparative}
             </div>
-            <h3>Positive Words</h3>
-            <div role="positive-words">
-                {props.data.positive.length > 0 ?
-                    <ul>
-                        {generateList(props.data.positive)}
-                    </ul>
-                    :
-                    <h5>No positive words</h5>
-                }
-            </div>
-            <h3>Negative Words</h3>
-            <div role="negative-words">
-                {props.data.negative.length > 0 ?
-                    <ul>
-                        {generateList(props.data.negative)}
-                    </ul>
-                    :
-                    <h5>No negative words</h5>
-                }
+            <div className='row'>
+                <div className='col'>
+                    <h3>Positive Words</h3>
+                    <div role="positive-words">
+                        {props.data.positive.length > 0 ?
+                            <ul>
+                                {generateList(props.data.positive)}
+                            </ul>
+                            :
+                            <h5>No positive words</h5>
+                        }
+                    </div>
+                </div>
+                <div className='col'>
+                    <h3>Negative Words</h3>
+                    <div role="negative-words">
+                        {props.data.negative.length > 0 ?
+                            <ul>
+                                {generateList(props.data.negative)}
+                            </ul>
+                            :
+                            <h5>No negative words</h5>
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     )

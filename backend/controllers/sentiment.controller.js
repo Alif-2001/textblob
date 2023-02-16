@@ -25,6 +25,8 @@ exports.analyze = (req, res, next) => {
 exports.history = (req, res) => {
     SentimentModel
         .find()
+        .sort({$natural:-1})
+        .limit(req.headers.count)
         .then((result) => {
             res.send(result);
         })

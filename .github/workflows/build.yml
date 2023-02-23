@@ -67,7 +67,7 @@ jobs:
         run: docker build . --file Dockerfile --tag backend
   
   docker-frontend:
-    needs: build-frotend
+    needs: build-frontend
     runs-on: ubuntu-latest
     defaults:
       run:

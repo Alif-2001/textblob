@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} pushed changes to Frontend
 on: 
   push:
     paths:
-      - 'frontend'
+      - 'frontend/**'
 
 jobs:
   lint-frontend:

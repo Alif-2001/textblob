@@ -8,4 +8,4 @@ on:
 jobs:
   print:
     steps:
-      run: echo Backend
+      - run: echo Backend

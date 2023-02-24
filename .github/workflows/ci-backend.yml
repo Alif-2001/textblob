@@ -1,0 +1,11 @@
+name: ci-backend
+run-name: ${{ github.actor }} pushed changes to Backend
+on: 
+  push:
+    paths:
+      - 'backend'
+
+jobs:
+  print:
+    steps:
+      run: echo Backend

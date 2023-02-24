@@ -1,0 +1,11 @@
+name: ci-frontend
+run-name: ${{ github.actor }} pushed changes to Frontend
+on: 
+  push:
+    paths:
+      - 'frontend'
+
+jobs:
+  print:
+    steps:
+      run: echo Hello

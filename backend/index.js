@@ -5,5 +5,5 @@ const port = 3080
 db.connect(app);
 
 app.listen(port, () => {
-    console.log(`Example app listenin on port ${port}`)
+    console.log(`Example app listening on port ${port}`)
 })
